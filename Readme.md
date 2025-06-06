@@ -108,6 +108,7 @@ mkdir temp
 export TMP_DIR=$PWD/temp
 
 # Write the target basic blocks to $TMP_DIR/BBtargets.txt manually or via script
+# Write the entry function to $TMP_DIR/Entry.txt manually or via script
 ```
 
 ```bash
@@ -133,6 +134,7 @@ cat $TMP_DIR/BBcalls.txt | grep -Ev "^[^,]*$|^([^,]*,){2,}[^,]*$" | sort | uniq 
 ```
 
 ```bash
+distance/path_constrain.py $TMP_DIR
 distance/gen_distance_fast.py $SUBJECT $TMP_DIR target
 # If that fails:
 distance/gen_distance_orig.sh $SUBJECT $TMP_DIR target
